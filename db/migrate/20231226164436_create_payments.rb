@@ -4,6 +4,7 @@ class CreatePayments < ActiveRecord::Migration[7.0]
       t.decimal :amount
       t.string :currency
       t.datetime :timestamp
+      t.string :customer_id
 
       t.timestamps
     end
