@@ -12,23 +12,20 @@ class GetPayment
   private
 
   def set_payment
-    context.payment = Payment.find()
+    context.payment = Payment.find(context.payment_id)
 
-    if context.payment.nil?
-      context.fail # No payment found
-    end
+    context.fail! unless context.payment.present
   end
 
   def set_customer
-    context.customer = GetCustomer.new.get_customer(@payment.customer_id)
+    context.customer = GetCustomer.new.get_customer(context.payment.customer_id)
 
-    if context.customer.nil?
-      context.fail # No customer found
-    end
+    context.fail! unless context.customer.present # No customer found
   end
 
   def prepare_result
-    # context.result =
+    # TODO: Set the result. Merge data from the two models into one, maybe with some decorater gem
+    context.result = 
   end
 
 end

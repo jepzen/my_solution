@@ -1,3 +1,9 @@
+PATH
+  remote: engines/customer
+  specs:
+    customer (0.1.0)
+      rails (>= 7.0.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -222,6 +228,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  customer!
   debug
   importmap-rails
   interactor (~> 3.0)
@@ -239,7 +246,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.0.4p208
+   ruby 3.1.2p20
 
 BUNDLED WITH
    2.3.14

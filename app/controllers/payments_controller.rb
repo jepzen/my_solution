@@ -8,7 +8,7 @@ class PaymentsController < ApplicationController
 
   # GET /payments/1 or /payments/1.json
   def show
-    @payment = GetPayment.call(params[:id])
+    @payment = GetPayment.call(payment_id: params[:id])
   end
 
   # GET /payments/new
